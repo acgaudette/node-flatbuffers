@@ -1,4 +1,5 @@
 Forked by Aaron C Gaudette on 13 Jan. 2017. See [here](https://www.npmjs.com/package/flatbuffers).
+This is an [updated](https://github.com/acgaudette/node-flatbuffers/commits/master) version of the original.
 
 # FlatBuffers in JavaScript
 
