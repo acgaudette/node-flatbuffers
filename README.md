@@ -1,3 +1,5 @@
+Forked by Aaron C Gaudette on 13 Jan. 2017. See [here](https://www.npmjs.com/package/flatbuffers).
+
 # FlatBuffers in JavaScript
 
 This is an implementation of [FlatBuffers](https://github.com/google/flatbuffers) in pure JavaScript. Unlike the official compiler, this implementation generates JavaScript code to convert between JavaScript objects and FlatBuffers at run time using the JIT. It currently requires binary schemas compiled with the `flatc` compiler, which is written in C++ and has to be built (see the [build instructions](http://google.github.io/flatbuffers/flatbuffers_guide_building.html)).
