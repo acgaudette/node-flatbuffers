@@ -643,7 +643,7 @@ function compileObjectParser(schema, context, object) {
   return key;
 }
 
-exports.compileSchema = function(bytesOrJson) {
+exports.compileSchema = function(bytesOrJson, tableName) {
   var schema = bytesOrJson;
   var bytes;
 
@@ -657,8 +657,14 @@ exports.compileSchema = function(bytesOrJson) {
   }
 
   var context = {};
-  var rootGenerator = context[compileObjectGenerator(schema, context, schema.rootTable)];
-  var rootParser = context[compileObjectParser(schema, context, schema.rootTable)];
+  var rootTable = tableName ? schema.objects.find(function(x) { return x.name === tableName; }) : schema.rootTable;
+  if (!rootTable) {
+    throw new Error('Unable to find table ' + tableName);
+  }
+
+  var rootGenerator = context[compileObjectGenerator(schema, context, rootTable)];
+  var rootParser = context[compileObjectParser(schema, context, rootTable)];
+
 
   return {
     generate: function(json) {
