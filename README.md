@@ -27,13 +27,13 @@ This is an implementation of [FlatBuffers](https://github.com/google/flatbuffers
 3. Install this library:
 
     ```
-    npm install flatbuffers
+    npm install acg-flatbuffers
     ```
 
 4. Use the library:
 
     ```
-    var flatbuffers = require('flatbuffers');
+    var flatbuffers = require('acg-flatbuffers');
     var fs = require('fs');
 
     var example = flatbuffers.compileSchema(fs.readFileSync('example.bfbs'));
